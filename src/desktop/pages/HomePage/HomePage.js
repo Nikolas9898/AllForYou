@@ -1,10 +1,12 @@
 import React from "react";
+import Header from "../../layout/Header/Header";
 import ProductListContainer from "../../modules/product/productList/ProductListContainer";
 
 function HomePage(props) {
   return (
     <React.Fragment>
-      <ProductListContainer />
+      <Header/>
+      <ProductListContainer/>
     </React.Fragment>
   );
 }
