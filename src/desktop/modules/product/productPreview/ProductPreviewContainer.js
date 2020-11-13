@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
-import ImageGallery from "react-image-gallery";
-import ProductPreviewStyl from "./ProductPreviewStyl.module.css";
-import "react-image-gallery/styles/css/image-gallery.css";
-import axios from "axios";
 
-function ProductPreviewContainer(props) {
+import axios from "axios";
+import ProductPreview from "./components/ProductPreview/ProductPreview";
+
+function ProductPreviewContainer({ slug }) {
   const [product, setProduct] = useState({});
   const [previewImages, setPreviewImages] = useState([]);
 
   useEffect(() => {
+    getProduct();
+  }, []);
+
+  const getProduct = () => {
     axios
-      .get(`https://allforyouapinodejs.herokuapp.com/api/product/${props.slug}`)
+      .get(`https://allforyouapinodejs.herokuapp.com/api/product/${slug}`)
       .then((product) => {
         setProduct(product.data);
         imagesTransformer(product.data);
       });
-  }, []);
+  };
 
   const imagesTransformer = (e) => {
     let productImages = [];
@@ -30,20 +33,9 @@ function ProductPreviewContainer(props) {
   };
 
   return (
-    <div className={ProductPreviewStyl.container}>
-      <div>
-        <ImageGallery items={previewImages} />
-      </div>
-      <h1>{product.title}</h1>
-      <div className={ProductPreviewStyl.description_container}>
-        <h3>Описание</h3>
-        <p>{product.description}</p>
-      </div>
-
-      <div className={ProductPreviewStyl.price_container}>
-        {product.price / 100} лв.
-      </div>
-    </div>
+    <React.Fragment>
+      <ProductPreview product={product} previewImages={previewImages} />
+    </React.Fragment>
   );
 }
 

@@ -20,19 +20,18 @@ function ProductListContainer(props) {
         <div className={ProductListContainerStyle.container}>
           <div className={ProductListContainerStyle.content}>
             {products.map((product) => {
-            
               return (
                 <div className={ProductListContainerStyle.card}>
                   <Link
                     to={`/product/${product.slug}`}
                     className={ProductListContainerStyle.card_container}
                   >
-                   
-                      <img
-                        className={ProductListContainerStyle.image}
-                        src={product.mainImage}
-                      />
-                    
+                    <img
+                      className={ProductListContainerStyle.image}
+                      src={product.mainImage}
+                      alt="imageNotFound"
+                    />
+
                     <div className={ProductListContainerStyle.description}>
                       <div className={ProductListContainerStyle.name}>
                         {product.title}
