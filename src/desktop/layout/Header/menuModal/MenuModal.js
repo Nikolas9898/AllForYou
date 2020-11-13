@@ -1,32 +1,28 @@
 import React from "react";
-import MenuModalStyl from './MenuModalStyl.module.css';
+import MenuModalStyl from "./MenuModalStyl.module.css";
+import { Link } from "react-router-dom";
 
-
-function MenuModal({isMenuOpen}) {
-    const categories=["Спорт","Игри","Козметика","Джаджи"]
+function MenuModal({ isMenuOpen, categories }) {
   return (
-       <div >
-        {
-            isMenuOpen===true?
-                    <div className={MenuModalStyl.container}>
-                        <div className={MenuModalStyl.content}> 
-                        <h1>Категории</h1>
-                        {
-                             categories.map(category=>{
-                                 return(
-                                     <div className={MenuModalStyl.category}>
-                                        {category}
-                                     </div>
-                                 )
-                             })
-                        }
-                    
-                        </div>
-                    </div>:
-                    null
-        
-        }
-      </div>
+    <div>
+      {isMenuOpen === true ? (
+        <div className={MenuModalStyl.container}>
+          <div className={MenuModalStyl.content}>
+            <h1>Категории</h1>
+            {categories.map((category) => {
+              return (
+                <Link
+                  className={MenuModalStyl.category}
+                  to={`/category/${category.title}`}
+                >
+                  {category.title}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      ) : null}
+    </div>
   );
 }
 
