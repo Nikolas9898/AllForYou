@@ -7,7 +7,7 @@ import econt from '../../../images/econt.jpg';
 
 function Footer(props) {
     return (
-         <nav className={FooterStyl.container}>
+         <footer className={FooterStyl.container}>
            <div className={FooterStyl.content}>
            
             <adress className={FooterStyl.connect_card}>
@@ -34,7 +34,7 @@ function Footer(props) {
           </div>
         
            </div>
-        </nav>
+        </footer>
     );
   }
   

@@ -1,0 +1,19 @@
+.container{
+    
+    top:18%;
+    width: 100%;
+    background: white;
+     border-bottom: solid 5px #032d55;
+     transition: width 2s;
+}
+.content{
+    color: #032d55;
+    margin-left: 5%;
+    margin-bottom: 20px;
+   }
+.category{
+    font-size: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px gray;
+}
