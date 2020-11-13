@@ -12,12 +12,12 @@
 
 .card{
     width: 38%;
-    max-width:150px;
+    max-width:250px;
     height:260px;
     border: solid 2px #032d55;
     margin-left:5%;
     margin-right:5%;
-    border-radius: 8px;
+    border-radius: 14px;
     margin-bottom: 10%;
     background: white;
     
@@ -32,7 +32,8 @@
   text-align: center;
   border-bottom: solid 2px #032d55;
   margin-bottom: 5%;
-  border-radius: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .description {
   text-align: center;

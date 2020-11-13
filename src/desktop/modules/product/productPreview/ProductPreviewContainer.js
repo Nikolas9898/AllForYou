@@ -31,7 +31,6 @@ function ProductPreviewContainer(props) {
 
   return (
     <div className={ProductPreviewStyl.container}>
-      {console.log(previewImages)}
       <div>
         <ImageGallery items={previewImages} />
       </div>
