@@ -6,9 +6,6 @@ import ProductPreview from "./components/ProductPreview/ProductPreview";
 function ProductPreviewContainer({ slug }) {
   const [product, setProduct] = useState({});
   const [previewImages, setPreviewImages] = useState([]);
-  const [imageCharge, setImageCharge] = useState(false);
-  
-
 
   useEffect(() => {
     getProduct();
