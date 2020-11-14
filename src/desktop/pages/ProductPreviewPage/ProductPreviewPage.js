@@ -4,7 +4,7 @@ import ProductPreviewContainer from "../../modules/product/productPreview/Produc
 import Footer from "../../layout/Footer/Footer";
 import { Helmet } from "react-helmet";
 
-function ProductPreviewPage(props, { meta, lang }) {
+function ProductPreviewPage({ meta, lang, match }) {
   return (
     <React.Fragment>
       {/* <Helmet>
@@ -23,11 +23,14 @@ function ProductPreviewPage(props, { meta, lang }) {
       </Helmet> */}
 
       <Helmet
-        title={props.match.params.slug}
+        htmlAttributes={{
+          lang,
+        }}
+        title={match.params.slug}
         meta={[
           {
             property: "og:url",
-            content: `https://zavsekiponeshto.herokuapp.com/product/${props.match.params.slug}`,
+            content: `https://zavsekiponeshto.herokuapp.com/product/${match.params.slug}`,
           },
           {
             name: "description",
@@ -35,7 +38,7 @@ function ProductPreviewPage(props, { meta, lang }) {
           },
           {
             property: "og:title",
-            content: props.match.params.slug,
+            content: match.params.slug,
           },
           {
             property: "og:image",
@@ -55,14 +58,19 @@ function ProductPreviewPage(props, { meta, lang }) {
             property: "og:type",
             content: "article",
           },
-        ]}
+        ].concat(meta)}
       />
 
       <Header />
-      <ProductPreviewContainer slug={props.match.params.slug} />
+      <ProductPreviewContainer slug={match.params.slug} />
       <Footer />
     </React.Fragment>
   );
 }
+ProductPreviewPage.defaultProps = {
+  lang: "en",
+  meta: [],
+  description: ``,
+};
 
 export default ProductPreviewPage;
