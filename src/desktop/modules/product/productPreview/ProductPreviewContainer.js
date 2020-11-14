@@ -34,7 +34,7 @@ function ProductPreviewContainer({ slug }) {
   };
 
   return (
-    <React.Fragment>
+    <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{slug}</title>
@@ -50,7 +50,7 @@ function ProductPreviewContainer({ slug }) {
         <meta name="og:type" content="article" />
       </Helmet>
       <ProductPreview product={product} previewImages={previewImages} />
-    </React.Fragment>
+    </div>
   );
 }
 
