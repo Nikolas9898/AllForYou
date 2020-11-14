@@ -37,7 +37,7 @@ function ProductPreviewContainer({ slug }) {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>{props.match.params.slug}</title>
+        <title>{slug}</title>
         <link rel="canonical" href="http://mysite.com/example" />
         <meta
           name="og:image"
@@ -45,7 +45,7 @@ function ProductPreviewContainer({ slug }) {
         />
         <meta
           name="og:ulr"
-          content={`https://zavsekiponeshto.herokuapp.com/product/${props.match.params.slug}`}
+          content={`https://zavsekiponeshto.herokuapp.com/product/${slug}`}
         />
         <meta name="og:type" content="article" />
       </Helmet>
