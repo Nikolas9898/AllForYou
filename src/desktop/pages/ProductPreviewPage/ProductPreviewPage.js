@@ -20,10 +20,11 @@ function ProductPreviewPage(props) {
           content={`https://zavsekiponeshto.herokuapp.com/product/${props.match.params.slug}`}
         />
         <meta name="og:type" content="article" />
+
+        {/* <Header />
+        <ProductPreviewContainer slug={props.match.params.slug} />
+        <Footer /> */}
       </Helmet>
-      <Header />
-      <ProductPreviewContainer slug={props.match.params.slug} />
-      <Footer />
     </React.Fragment>
   );
 }
