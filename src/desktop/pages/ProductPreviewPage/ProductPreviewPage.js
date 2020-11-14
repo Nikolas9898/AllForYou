@@ -10,13 +10,11 @@ function ProductPreviewPage(props) {
       <Helmet>
         <meta charSet="utf-8" />
         <title>My Title</title>
-        <meta
-          name="og:image"
-          property="og:image"
-          content="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/-Hn0KbzDJps.png"
-        />
-
         <link rel="canonical" href="http://mysite.com/example" />
+        <meta
+          property="og:image"
+          content="http://reedbarger.com/static/ca-styled-logo-5205dbb0983e1531d228c98584ab5711.png"
+        />
       </Helmet>
       <Header />
       <ProductPreviewContainer slug={props.match.params.slug} />
