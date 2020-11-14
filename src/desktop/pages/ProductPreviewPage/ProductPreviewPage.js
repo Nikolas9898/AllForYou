@@ -4,10 +4,10 @@ import ProductPreviewContainer from "../../modules/product/productPreview/Produc
 import Footer from "../../layout/Footer/Footer";
 import { Helmet } from "react-helmet";
 
-function ProductPreviewPage({ meta, lang, match }) {
+function ProductPreviewPage(props) {
   return (
     <React.Fragment>
-      {/* <Helmet>
+      <Helmet>
         <meta charSet="utf-8" />
         <title>{props.match.params.slug}</title>
         <link rel="canonical" href="http://mysite.com/example" />
@@ -20,57 +20,12 @@ function ProductPreviewPage({ meta, lang, match }) {
           content={`https://zavsekiponeshto.herokuapp.com/product/${props.match.params.slug}`}
         />
         <meta property="og:type" content="article" />
-      </Helmet> */}
-
-      <Helmet
-        htmlAttributes={{
-          lang,
-        }}
-        title={match.params.slug}
-        meta={[
-          {
-            property: "og:url",
-            content: `https://zavsekiponeshto.herokuapp.com/product/${match.params.slug}`,
-          },
-          {
-            name: "description",
-            content: "Gosho e prost",
-          },
-          {
-            property: "og:title",
-            content: match.params.slug,
-          },
-          {
-            property: "og:image",
-            content:
-              "http://reedbarger.com/static/ca-styled-logo-5205dbb0983e1531d228c98584ab5711.png",
-          },
-          {
-            property: "og:image:secure_url",
-            content:
-              "http://reedbarger.com/static/ca-styled-logo-5205dbb0983e1531d228c98584ab5711.png",
-          },
-          {
-            property: "og:description",
-            content: "Gosho pa e prost",
-          },
-          {
-            property: "og:type",
-            content: "article",
-          },
-        ].concat(meta)}
-      />
-
+      </Helmet>
       <Header />
-      <ProductPreviewContainer slug={match.params.slug} />
+      <ProductPreviewContainer slug={props.match.params.slug} />
       <Footer />
     </React.Fragment>
   );
 }
-ProductPreviewPage.defaultProps = {
-  lang: "en",
-  meta: [],
-  description: ``,
-};
 
 export default ProductPreviewPage;
