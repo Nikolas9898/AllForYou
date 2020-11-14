@@ -1,9 +1,9 @@
 .container {
-  top: 18%;
   width: 100%;
   background: white;
   border-bottom: solid 5px #032d55;
-  transition: width 2s;
+  transition: height 1s;
+  position:absolute;
 }
 .content {
   color: #032d55;

@@ -2,7 +2,7 @@ import React from "react";
 import ImageGallery from "react-image-gallery";
 import ProductPreviewStyl from "../../ProductPreviewStyl.module.css";
 import "react-image-gallery/styles/css/image-gallery.css";
-import ContentLoader, { Facebook } from 'react-content-loader'
+import ContentLoader from 'react-content-loader'
 
 
 function ProductPreview({ product, previewImages }) {
@@ -25,41 +25,34 @@ function ProductPreview({ product, previewImages }) {
       <rect x="0" y="0" rx="0" ry="0" width="100%" max-height="calc(100vh - 80px)" />  
       </ContentLoader>
 
-
-
-
       <ContentLoader
           speed={2}
           width="100%"
           height="100%"
-          viewBox="0 0 100 25"
+          viewBox="0 0 100 30"
           backgroundColor="#999494"
           foregroundColor="#ecebeb"
       
       >
-          <rect x="15" y="0" rx="0" ry="0" width="20" height="20" />   
-          <rect x="37" y="0" rx="0" ry="0" width="20" height="20" />  
-          <rect x="59" y="0" rx="0" ry="0" width="20" height="20" />    
+          <rect x="17" y="0" rx="0" ry="0" width="20" height="20" />   
+          <rect x="39" y="0" rx="0" ry="0" width="20" height="20" />  
+          <rect x="61" y="0" rx="0" ry="0" width="20" height="20" />    
       </ContentLoader>
-
-
-
 
         <ContentLoader
             speed={2}
             width="90%"
             height="100%"
-            viewBox="0 0 100 14"
+            viewBox="0 0 100 30"
             backgroundColor="#999494"
             foregroundColor="#ecebeb"
       >
-        <rect x="10" y="0" rx="10" ry="10" width="90%" height="10" /> 
+        <rect x="10" y="0" rx="5" ry="5" width="90%" height="8" /> 
+        <rect x="10" y="13" rx="5" ry="5" width="60%" height="8" />
       </ContentLoader>
 
 
-          <h3>Описание</h3>
-
-
+      
 
           <ContentLoader
             speed={2}
