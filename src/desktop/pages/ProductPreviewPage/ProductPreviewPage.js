@@ -9,12 +9,17 @@ function ProductPreviewPage(props) {
     <React.Fragment>
       <Helmet>
         <meta charSet="utf-8" />
-        <title>My Title</title>
+        <title>{props.match.params.slug}</title>
         <link rel="canonical" href="http://mysite.com/example" />
         <meta
           property="og:image"
           content="http://reedbarger.com/static/ca-styled-logo-5205dbb0983e1531d228c98584ab5711.png"
         />
+        <meta
+          property="og:ulr"
+          content={`https://zavsekiponeshto.herokuapp.com/product/${props.match.params.slug}`}
+        />
+        <meta property="og:type" content="article" />
       </Helmet>
       <Header />
       <ProductPreviewContainer slug={props.match.params.slug} />
