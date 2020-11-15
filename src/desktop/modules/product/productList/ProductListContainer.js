@@ -114,9 +114,9 @@ function ProductListContainer(props) {
                         {product.title}
                       </div>
                       <div className={ProductListContainerStyle.price}>
-                        {product.price / 100}
-                        {" лв."}
+                      {(product.price / 100).toFixed(2) } лв.
                       </div>
+
                     </div>
                   </Link>
                 </div>

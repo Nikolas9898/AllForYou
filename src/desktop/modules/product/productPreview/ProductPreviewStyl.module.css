@@ -3,6 +3,7 @@
   max-width: 900px;
   width: 100%;
   min-height: calc(100vh - 320px);
+  margin-bottom: 100px;
 }
 .description_container {
   width: 95%;
@@ -12,4 +13,21 @@
   text-align: center;
   font-size: 30px;
   color: red;
+}
+.order_container{
+  margin-top: 50px;
+  text-align: center;
+  color: #032d55;
+  font-weight: bolder;
+}
+.order{
+ 
+  font-size: 30px;
+}
+.number{
+  margin-top: 10px;
+  font-size: 40px;
+}
+.time{
+  font-size: 20px;
 }
