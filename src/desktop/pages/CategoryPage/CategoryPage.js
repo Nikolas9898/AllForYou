@@ -2,13 +2,13 @@ import React from "react";
 import Footer from "../../layout/Footer/Footer";
 import Header from "../../layout/Header/Header";
 import CategoryPreviewContainer from "../../modules/category/categoryPreview/CategoryPreviewContainer";
-import PageStyl from '../../layout/pagesLayout/PageLayout.module.css';
+import PageStyl from "../../layout/pagesLayout/PageLayout.module.css";
 
-function CategoryPage(props) {
+function CategoryPage({ match }) {
   return (
     <div className={PageStyl.container}>
       <Header />
-      <CategoryPreviewContainer />
+      <CategoryPreviewContainer slug={match.params.slug} />
       <Footer />
     </div>
   );

@@ -4,11 +4,13 @@ import logo from "../../../images/logo2.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import MenuModal from "./menuModal/MenuModal";
 import axios from "axios";
 
 function Header(props) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSeacrhOpen, setIsSearchOpen] = useState(false);
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -19,7 +21,6 @@ function Header(props) {
     axios
       .get("https://allforyouapinodejs.herokuapp.com/api/category")
       .then((categories) => {
-        console.log(categories);
         setCategories(categories.data);
       });
   };
@@ -27,8 +28,9 @@ function Header(props) {
   function handleMenu() {
     isMenuOpen === true ? setIsMenuOpen(false) : setIsMenuOpen(true);
   }
-
-  // const categories = ["Спорт", "Игри", "Козметика", "Джаджи"];
+  function handleSearch() {
+    isSeacrhOpen === true ? setIsSearchOpen(false) : setIsSearchOpen(true);
+  }
 
   return (
     <nav className={HeaderStyle.container}>
@@ -36,14 +38,31 @@ function Header(props) {
         <Link to="/">
           <img className={HeaderStyle.logo} src={logo} alt={"notFound"} />
         </Link>
-        <FontAwesomeIcon
-          onClick={handleMenu}
-          className={HeaderStyle.menu}
-          icon={faBars}
-        />
+        <div className={HeaderStyle.menu_container}>
+            <FontAwesomeIcon
+            onClick={handleMenu}
+            className={HeaderStyle.menu}
+            icon={faBars}
+            />
+          
+    
+                <input  className={HeaderStyle.search_input}/>
+                <FontAwesomeIcon
+                onClick={handleSearch}
+                className={HeaderStyle.search_icon}
+                icon={faSearch}
+                />
+                
+              </div>
+    
+       
       </div>
 
-      <MenuModal categories={categories} isMenuOpen={isMenuOpen} />
+      <MenuModal
+        categories={categories}
+        isMenuOpen={isMenuOpen}
+        handleMenu={handleMenu}
+      />
     </nav>
   );
 }
