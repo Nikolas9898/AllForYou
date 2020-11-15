@@ -12,7 +12,6 @@ function ProductListContainer(props) {
       .get("https://allforyouapinodejs.herokuapp.com/api/product")
       .then((products) => {
         setProducts(products.data);
-        console.log(products);
       });
   }, []);
 
