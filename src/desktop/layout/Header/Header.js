@@ -8,10 +8,14 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import MenuModal from "./menuModal/MenuModal";
 import axios from "axios";
 
+import { useHistory } from "react-router-dom";
+
 function Header(props) {
+  const history = useHistory();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSeacrhOpen, setIsSearchOpen] = useState(false);
+  // const [isSeacrhOpen, setIsSearchOpen] = useState(false);
   const [categories, setCategories] = useState([]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     getCategories();
@@ -25,12 +29,26 @@ function Header(props) {
       });
   };
 
-  function handleMenu() {
+  const handleMenu = () => {
     isMenuOpen === true ? setIsMenuOpen(false) : setIsMenuOpen(true);
-  }
-  function handleSearch() {
-    isSeacrhOpen === true ? setIsSearchOpen(false) : setIsSearchOpen(true);
-  }
+  };
+  // function handleSearch() {
+  //   isSeacrhOpen === true ? setIsSearchOpen(false) : setIsSearchOpen(true);
+  // }
+
+  const handleInput = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      history.push(`/search/${search}`);
+    }
+  };
+
+  const goToSearch = () => {
+    history.push(`/search/${search}`);
+  };
 
   return (
     <nav className={HeaderStyle.container}>
@@ -39,23 +57,24 @@ function Header(props) {
           <img className={HeaderStyle.logo} src={logo} alt={"notFound"} />
         </Link>
         <div className={HeaderStyle.menu_container}>
-            <FontAwesomeIcon
+          <FontAwesomeIcon
             onClick={handleMenu}
             className={HeaderStyle.menu}
             icon={faBars}
-            />
-          
-    
-                <input  className={HeaderStyle.search_input}/>
-                <FontAwesomeIcon
-                onClick={handleSearch}
-                className={HeaderStyle.search_icon}
-                icon={faSearch}
-                />
-                
-              </div>
-    
-       
+          />
+
+          <input
+            className={HeaderStyle.search_input}
+            onChange={handleInput}
+            value={search}
+            onKeyDown={handleKeyDown}
+          />
+          <FontAwesomeIcon
+            onClick={goToSearch}
+            className={HeaderStyle.search_icon}
+            icon={faSearch}
+          />
+        </div>
       </div>
 
       <MenuModal
