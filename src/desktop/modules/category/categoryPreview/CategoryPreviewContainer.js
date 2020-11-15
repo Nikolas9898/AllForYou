@@ -98,7 +98,9 @@ function CategoryPreviewContainer({ slug }) {
         </div>
       ) : (
         <div className={CategoryPreviewStyl.container}>
+          <div className={CategoryPreviewStyl.title}>Категорията</div>
           <div className={CategoryPreviewStyl.content}>
+            
             {products.map((product) => {
               return (
                 <div className={CategoryPreviewStyl.card} key={product._id}>

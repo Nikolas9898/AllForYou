@@ -2,7 +2,7 @@
   margin: auto;
   max-width: 900px;
   width: 100%;
-  margin-top: 100px;
+  margin-top: 50px;
   min-height: calc(100vh - 320px);
   margin-bottom: 100px;
 }
@@ -10,7 +10,15 @@
   display: flex;
   flex-wrap: wrap;
 }
-
+.title{
+  color: white;
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
 .card {
   width: 38%;
   max-width: 250px;
