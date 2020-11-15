@@ -2,7 +2,7 @@ import React from "react";
 import MenuModalStyl from "./MenuModalStyl.module.css";
 import { Link } from "react-router-dom";
 
-function MenuModal({ isMenuOpen, categories }) {
+function MenuModal({ isMenuOpen, categories, handleMenu }) {
   return (
     <div>
       {isMenuOpen === true ? (
@@ -12,8 +12,9 @@ function MenuModal({ isMenuOpen, categories }) {
             {categories.map((category) => {
               return (
                 <Link
+                  onClick={handleMenu}
                   className={MenuModalStyl.category}
-                  to={`/category/${category.title}`}
+                  to={`/category/${category.slug}`}
                 >
                   {category.title}
                 </Link>

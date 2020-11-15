@@ -43,7 +43,11 @@ function Header(props) {
         />
       </div>
 
-      <MenuModal categories={categories} isMenuOpen={isMenuOpen} />
+      <MenuModal
+        categories={categories}
+        isMenuOpen={isMenuOpen}
+        handleMenu={handleMenu}
+      />
     </nav>
   );
 }
