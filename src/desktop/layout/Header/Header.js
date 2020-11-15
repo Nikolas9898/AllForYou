@@ -19,7 +19,6 @@ function Header(props) {
     axios
       .get("https://allforyouapinodejs.herokuapp.com/api/category")
       .then((categories) => {
-        console.log(categories);
         setCategories(categories.data);
       });
   };

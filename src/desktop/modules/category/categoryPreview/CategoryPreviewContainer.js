@@ -9,7 +9,6 @@ function CategoryPreviewContainer({ slug }) {
   const [loader] = useState([{}, {}, {}, {}]);
 
   useEffect(() => {
-    console.log("izpulnih se");
     axios
       .get(
         `https://allforyouapinodejs.herokuapp.com/api/product/byCategory/${slug}`
