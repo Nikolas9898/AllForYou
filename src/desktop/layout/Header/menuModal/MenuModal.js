@@ -15,7 +15,11 @@ function MenuModal({ isMenuOpen, categories, handleMenu }) {
                   key={category._id}
                   onClick={handleMenu}
                   className={MenuModalStyl.category}
-                  to={`/category/${category.slug}`}
+                  to={{
+                    pathname: `/category/${category.slug}`,
+                    state: `${category.title}`,
+                  }}
+                  title={category.title}
                 >
                   {category.title}
                 </Link>

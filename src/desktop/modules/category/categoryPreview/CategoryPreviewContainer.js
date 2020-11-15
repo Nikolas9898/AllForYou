@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ContentLoader from "react-content-loader";
 import axios from "axios";
 
-function CategoryPreviewContainer({ slug }) {
+function CategoryPreviewContainer({ slug, categoryTitle }) {
   const [products, setProducts] = useState([]);
   const [loader] = useState([{}, {}, {}, {}]);
 
@@ -98,9 +98,8 @@ function CategoryPreviewContainer({ slug }) {
         </div>
       ) : (
         <div className={CategoryPreviewStyl.container}>
-          <div className={CategoryPreviewStyl.title}>Категорията</div>
+          <div className={CategoryPreviewStyl.title}>{categoryTitle}</div>
           <div className={CategoryPreviewStyl.content}>
-            
             {products.map((product) => {
               return (
                 <div className={CategoryPreviewStyl.card} key={product._id}>
