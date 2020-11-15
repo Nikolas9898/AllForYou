@@ -98,32 +98,28 @@ function ProductPreview({ product, previewImages }) {
           <div>
             <ImageGallery items={previewImages} />
           </div>
-          
+
           <div className={ProductPreviewStyl.description_container}>
             <h1>{product.title}</h1>
             <h3>Описание</h3>
             <p>{product.description}</p>
           </div>
 
-      <div className={ProductPreviewStyl.price_container}>
-        {(product.price / 100).toFixed(2) } лв.
-      </div>
-      <div className={ProductPreviewStyl.order_container}>
-                      <div className={ProductPreviewStyl.order}>
-                        Бърза поръчка:
-                      </div>
-                      <a className={ProductPreviewStyl.number}href="tel:+359876825221">
-                        +359 876 825 221
-                      </a>
-                      <div className={ProductPreviewStyl.time}>
-                        (без почивен ден от 9:00 до 22:00)
-                      </div>
-                      </div>
-      </div>
-       )
-     }
-
+          <div className={ProductPreviewStyl.price_container}>
+            {(product.price / 100).toFixed(2)} лв.
+          </div>
+          <div className={ProductPreviewStyl.order_container}>
+            <div className={ProductPreviewStyl.order}>Бърза поръчка:</div>
+            <a className={ProductPreviewStyl.number} href="tel:+359883771333">
+              +359 883 771 333
+            </a>
+            <div className={ProductPreviewStyl.time}>
+              (без почивен ден от 9:00 до 22:00)
+            </div>
+          </div>
         </div>
+      )}
+    </div>
   );
 }
 
