@@ -41,13 +41,13 @@ function Header(props) {
   };
 
   const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
+    if (event.key === "Enter" && search.length > 0) {
       history.push(`/search/${search}`);
     }
   };
 
   const goToSearch = () => {
-    history.push(`/search/${search}`);
+    if (search.length > 0) history.push(`/search/${search}`);
   };
 
   return (
