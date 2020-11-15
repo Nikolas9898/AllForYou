@@ -12,6 +12,7 @@ function MenuModal({ isMenuOpen, categories, handleMenu }) {
             {categories.map((category) => {
               return (
                 <Link
+                  key={category._id}
                   onClick={handleMenu}
                   className={MenuModalStyl.category}
                   to={`/category/${category.slug}`}

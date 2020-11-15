@@ -23,9 +23,9 @@ function CategoryPreviewContainer({ slug }) {
       {products.length === 0 ? (
         <div className={CategoryPreviewStyl.container}>
           <div className={CategoryPreviewStyl.content}>
-            {loader.map((product) => {
+            {loader.map((product, index) => {
               return (
-                <div className={CategoryPreviewStyl.card}>
+                <div className={CategoryPreviewStyl.card} key={index}>
                   <div>
                     <ContentLoader
                       speed={2}
@@ -101,7 +101,7 @@ function CategoryPreviewContainer({ slug }) {
           <div className={CategoryPreviewStyl.content}>
             {products.map((product) => {
               return (
-                <div className={CategoryPreviewStyl.card}>
+                <div className={CategoryPreviewStyl.card} key={product._id}>
                   <Link
                     to={`/product/${product.slug}`}
                     className={CategoryPreviewStyl.card_container}

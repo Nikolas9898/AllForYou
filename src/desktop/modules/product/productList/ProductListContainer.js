@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import ProductListContainerStyle from "./ProductListContainerStyle.module.css";
 import axios from "axios";
-import ContentLoader from "react-content-loader";
+import ProductCard from "./components/productCard/ProductCard";
+import Loader from "./components/loader/Loader";
 
 function ProductListContainer(props) {
   const [products, setProducts] = useState([]);
@@ -20,76 +21,8 @@ function ProductListContainer(props) {
       {products.length === 0 ? (
         <div className={ProductListContainerStyle.container}>
           <div className={ProductListContainerStyle.content}>
-            {loader.map((product) => {
-              return (
-                <div className={ProductListContainerStyle.card}>
-                  <div>
-                    <ContentLoader
-                      speed={2}
-                      width="100%"
-                      height="100%"
-                      backgroundColor="#999494"
-                      foregroundColor="#ecebeb"
-                    >
-                      <rect
-                        x="0"
-                        y="0"
-                        rx="10"
-                        ry="10"
-                        width="100%"
-                        max-height="calc(100vh - 80px)"
-                      />
-                    </ContentLoader>
-                  </div>
-
-                  <div className={ProductListContainerStyle.description}>
-                    <div className={ProductListContainerStyle.name}>
-                      <ContentLoader
-                        speed={2}
-                        width="90%"
-                        height="100%"
-                        backgroundColor="#999494"
-                        foregroundColor="#ecebeb"
-                      >
-                        <rect
-                          x="0"
-                          y="10"
-                          rx="10"
-                          ry="10"
-                          width="100%"
-                          height="10"
-                        />
-                        <rect
-                          x="0"
-                          y="30"
-                          rx="10"
-                          ry="10"
-                          width="60%"
-                          height="10"
-                        />
-                      </ContentLoader>
-                    </div>
-                    <div className={ProductListContainerStyle.price}>
-                      <ContentLoader
-                        speed={2}
-                        width="50%"
-                        height="100%"
-                        backgroundColor="#999494"
-                        foregroundColor="#ecebeb"
-                      >
-                        <rect
-                          x="20%"
-                          y="30"
-                          rx="10"
-                          ry="10"
-                          width="60%"
-                          height="30%"
-                        />
-                      </ContentLoader>
-                    </div>
-                  </div>
-                </div>
-              );
+            {loader.map((product, index) => {
+              return <Loader index={index} key={index} />;
             })}
           </div>
         </div>
@@ -97,30 +30,7 @@ function ProductListContainer(props) {
         <div className={ProductListContainerStyle.container}>
           <div className={ProductListContainerStyle.content}>
             {products.map((product) => {
-              return (
-                <div className={ProductListContainerStyle.card}>
-                  <Link
-                    to={`/product/${product.slug}`}
-                    className={ProductListContainerStyle.card_container}
-                  >
-                    <img
-                      className={ProductListContainerStyle.image}
-                      src={product.mainImage}
-                      alt="imageNotFound"
-                    />
-
-                    <div className={ProductListContainerStyle.description}>
-                      <div className={ProductListContainerStyle.name}>
-                        {product.title}
-                      </div>
-                      <div className={ProductListContainerStyle.price}>
-                        {product.price / 100}
-                        {" лв."}
-                      </div>
-                    </div>
-                  </Link>
-                </div>
-              );
+              return <ProductCard product={product} key={product._id} />;
             })}
           </div>
         </div>

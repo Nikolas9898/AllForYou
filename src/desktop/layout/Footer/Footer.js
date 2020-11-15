@@ -9,7 +9,7 @@ function Footer(props) {
   return (
     <footer className={FooterStyl.container}>
       <div className={FooterStyl.content}>
-        <adress className={FooterStyl.connect_card}>
+        <div className={FooterStyl.connect_card}>
           <h1>Свържете се с нас</h1>
           <div className={FooterStyl.connect_form}>
             <FontAwesomeIcon className={FooterStyl.connect} icon={faPhone} />
@@ -26,7 +26,7 @@ function Footer(props) {
               zaveskiponeshto@gmail.com
             </a>
           </div>
-        </adress>
+        </div>
 
         <div className={FooterStyl.connect_card}>
           <h1>Доставяме чрез</h1>
