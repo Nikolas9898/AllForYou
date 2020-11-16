@@ -10,7 +10,14 @@
   display: flex;
   flex-wrap: wrap;
 }
-.title{
+
+.content p {
+  text-align: center;
+  color: red;
+  font-size: 22px;
+  margin: auto;
+}
+.title {
   color: white;
   width: 60%;
   margin: auto;

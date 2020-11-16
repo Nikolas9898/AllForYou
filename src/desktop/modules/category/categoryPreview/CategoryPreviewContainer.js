@@ -7,6 +7,7 @@ import axios from "axios";
 function CategoryPreviewContainer({ slug, categoryTitle }) {
   const [products, setProducts] = useState([]);
   const [loader] = useState([{}, {}, {}, {}]);
+  const [request, setRequest] = useState(false);
 
   useEffect(() => {
     axios
@@ -15,6 +16,7 @@ function CategoryPreviewContainer({ slug, categoryTitle }) {
       )
       .then((products) => {
         setProducts(products.data);
+        setRequest(true);
       });
   }, [slug]);
 
@@ -23,77 +25,83 @@ function CategoryPreviewContainer({ slug, categoryTitle }) {
       {products.length === 0 ? (
         <div className={CategoryPreviewStyl.container}>
           <div className={CategoryPreviewStyl.content}>
-            {loader.map((product, index) => {
-              return (
-                <div className={CategoryPreviewStyl.card} key={index}>
-                  <div>
-                    <ContentLoader
-                      speed={2}
-                      width="100%"
-                      height="100%"
-                      backgroundColor="#999494"
-                      foregroundColor="#ecebeb"
-                    >
-                      <rect
-                        x="0"
-                        y="0"
-                        rx="10"
-                        ry="10"
-                        width="100%"
-                        max-height="calc(100vh - 80px)"
-                      />
-                    </ContentLoader>
-                  </div>
-
-                  <div className={CategoryPreviewStyl.description}>
-                    <div className={CategoryPreviewStyl.name}>
-                      <ContentLoader
-                        speed={2}
-                        width="90%"
-                        height="100%"
-                        backgroundColor="#999494"
-                        foregroundColor="#ecebeb"
-                      >
-                        <rect
-                          x="0"
-                          y="10"
-                          rx="10"
-                          ry="10"
+            {request === true ? (
+              <p>Няма намерени продукти</p>
+            ) : (
+              <React.Fragment>
+                {loader.map((product, index) => {
+                  return (
+                    <div className={CategoryPreviewStyl.card} key={index}>
+                      <div>
+                        <ContentLoader
+                          speed={2}
                           width="100%"
-                          height="10"
-                        />
-                        <rect
-                          x="0"
-                          y="30"
-                          rx="10"
-                          ry="10"
-                          width="60%"
-                          height="10"
-                        />
-                      </ContentLoader>
+                          height="100%"
+                          backgroundColor="#999494"
+                          foregroundColor="#ecebeb"
+                        >
+                          <rect
+                            x="0"
+                            y="0"
+                            rx="10"
+                            ry="10"
+                            width="100%"
+                            max-height="calc(100vh - 80px)"
+                          />
+                        </ContentLoader>
+                      </div>
+
+                      <div className={CategoryPreviewStyl.description}>
+                        <div className={CategoryPreviewStyl.name}>
+                          <ContentLoader
+                            speed={2}
+                            width="90%"
+                            height="100%"
+                            backgroundColor="#999494"
+                            foregroundColor="#ecebeb"
+                          >
+                            <rect
+                              x="0"
+                              y="10"
+                              rx="10"
+                              ry="10"
+                              width="100%"
+                              height="10"
+                            />
+                            <rect
+                              x="0"
+                              y="30"
+                              rx="10"
+                              ry="10"
+                              width="60%"
+                              height="10"
+                            />
+                          </ContentLoader>
+                        </div>
+                        <div className={CategoryPreviewStyl.price}>
+                          <ContentLoader
+                            speed={2}
+                            width="50%"
+                            height="100%"
+                            backgroundColor="#999494"
+                            foregroundColor="#ecebeb"
+                          >
+                            <rect
+                              x="20%"
+                              y="30"
+                              rx="10"
+                              ry="10"
+                              width="60%"
+                              height="30%"
+                            />
+                          </ContentLoader>
+                        </div>
+                      </div>
                     </div>
-                    <div className={CategoryPreviewStyl.price}>
-                      <ContentLoader
-                        speed={2}
-                        width="50%"
-                        height="100%"
-                        backgroundColor="#999494"
-                        foregroundColor="#ecebeb"
-                      >
-                        <rect
-                          x="20%"
-                          y="30"
-                          rx="10"
-                          ry="10"
-                          width="60%"
-                          height="30%"
-                        />
-                      </ContentLoader>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                  );
+                })}
+              </React.Fragment>
+            )}
           </div>
         </div>
       ) : (
