@@ -18,7 +18,7 @@ function ProductCard({ product }) {
         <div className={ProductListContainerStyle.description}>
           <div className={ProductListContainerStyle.name}>{product.title}</div>
           <div className={ProductListContainerStyle.price}>
-            {product.price / 100}
+            {(product.price / 100).toFixed(2)}
             {" лв."}
           </div>
         </div>

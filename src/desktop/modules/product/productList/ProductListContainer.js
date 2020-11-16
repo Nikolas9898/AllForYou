@@ -7,7 +7,7 @@ import Loader from "./components/loader/Loader";
 
 function ProductListContainer(props) {
   const [products, setProducts] = useState([]);
-  const [loader] = useState([{}, {}, {}, {}]);
+  const [loader] = useState([]);
   useEffect(() => {
     axios
       .get("https://allforyouapinodejs.herokuapp.com/api/product")
@@ -27,7 +27,7 @@ function ProductListContainer(props) {
           </div>
         </div>
       ) : (
-        <div className={ProductListContainerStyle.container}>
+        <div className={ProductListContainerStyle.container}> 
           <div className={ProductListContainerStyle.content}>
             {products.map((product) => {
               return <ProductCard product={product} key={product._id} />;

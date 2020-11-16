@@ -57,12 +57,15 @@ function Header(props) {
           <img className={HeaderStyle.logo} src={logo} alt={"notFound"} />
         </Link>
         <div className={HeaderStyle.menu_container}>
+          
           <FontAwesomeIcon
             onClick={handleMenu}
             className={HeaderStyle.menu}
             icon={faBars}
           />
-
+            <div  onClick={handleMenu} className={HeaderStyle.category}>
+              Категории
+            </div>
           <input
             className={HeaderStyle.search_input}
             onChange={handleInput}
@@ -75,13 +78,14 @@ function Header(props) {
             icon={faSearch}
           />
         </div>
-      </div>
-
-      <MenuModal
+        <MenuModal
         categories={categories}
         isMenuOpen={isMenuOpen}
         handleMenu={handleMenu}
       />
+      </div>
+
+      
     </nav>
   );
 }

@@ -126,7 +126,7 @@ function CategoryPreviewContainer({ slug, categoryTitle }) {
                         {product.title}
                       </div>
                       <div className={CategoryPreviewStyl.price}>
-                        {product.price / 100}
+                      {(product.price / 100).toFixed(2)}
                         {" лв."}
                       </div>
                     </div>
