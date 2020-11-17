@@ -1,31 +1,38 @@
-.container{
-    background: dimgray;
-    color: white;
+.container {
+  background: dimgray;
+  color: white;
 }
-.content{
-    display: block;
-    height: 100%;
-    flex-wrap: wrap;
-    padding: 50px 20px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.content {
+  display: block;
+  height: 100%;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.connect_card{
-    margin-top: 60px;
+.connect_card {
+  margin-top: 60px;
 }
-.connect_form{
-    margin-bottom: 30px;
+.connect_form {
+  margin-bottom: 30px;
 }
-.connect{
-    font-size: 20px;
-    color: white;
-    margin-right: 10px;
-    text-decoration: none;
-   
+.connect {
+  font-size: 20px;
+  color: white;
+  margin-right: 10px;
+  text-decoration: none;
 }
-.logo{
+.logo {
+  width: 23%;
+  margin: auto;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
     width: 80%;
     margin: auto;
     border-radius: 20px;
+  }
 }

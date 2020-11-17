@@ -38,12 +38,10 @@
   background: white;
 }
 
-
 @media only screen and (min-width: 500px) {
- 
   .card {
     width: 28%;
-    
+
     height: 260px;
     border: solid 2px #032d55;
     margin-left: 2%;
@@ -52,7 +50,7 @@
     margin-bottom: 10%;
     background: white;
   }
-    
+
   .container {
     margin: auto;
     width: 100%;
@@ -63,26 +61,25 @@
 }
 
 @media only screen and (min-width: 900px) {
- 
-    .card {
-      width: 180px;
-      height: 260px;
-      border: solid 2px #032d55;
-      margin-left: 20px;
-      margin-right: 20px;
-      border-radius: 14px;
-      margin-bottom: 50px;
-      background:white;
-    } 
-      
-    .container {
-      margin: auto;
-      width: 900px;
-      margin-top: 50px;
-      min-height: calc(100vh - 320px);
-      margin-bottom: 100px;
-    }
+  .card {
+    width: 180px;
+    height: 260px;
+    border: solid 2px #032d55;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 14px;
+    margin-bottom: 50px;
+    background: white;
   }
+
+  .container {
+    margin: auto;
+    width: 900px;
+    margin-top: 50px;
+    min-height: calc(100vh - 320px);
+    margin-bottom: 100px;
+  }
+}
 
 .card_container {
   height: 100%;
