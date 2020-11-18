@@ -30,7 +30,7 @@ function Footer(props) {
 
         <div className={FooterStyl.connect_card}>
           <h1>Доставяме чрез</h1>
-          <img className={FooterStyl.logo} src={econt} />
+          <img className={FooterStyl.logo} src={econt} alt="econt" />
         </div>
       </div>
     </footer>
