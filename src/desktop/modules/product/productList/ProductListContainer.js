@@ -9,6 +9,7 @@ function ProductListContainer(props) {
   const [products, setProducts] = useState([]);
   const [loader] = useState([]);
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get("https://allforyouapinodejs.herokuapp.com/api/product")
       .then((products) => {
@@ -27,11 +28,10 @@ function ProductListContainer(props) {
           </div>
         </div>
       ) : (
-        <div className={ProductListContainerStyle.container}> 
+        <div className={ProductListContainerStyle.container}>
           <div className={ProductListContainerStyle.content}>
             {products.map((product) => {
               return <ProductCard product={product} key={product._id} />;
-
             })}
           </div>
         </div>

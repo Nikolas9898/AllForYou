@@ -10,6 +10,7 @@ function CategoryPreviewContainer({ slug, categoryTitle }) {
   const [request, setRequest] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(
         `https://allforyouapinodejs.herokuapp.com/api/product/byCategory/${slug}`

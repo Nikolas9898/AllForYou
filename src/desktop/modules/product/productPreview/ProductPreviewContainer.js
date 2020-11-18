@@ -9,6 +9,7 @@ function ProductPreviewContainer({ slug }) {
   const [imageCharge, setImageCharge] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getProduct();
   }, []);
 

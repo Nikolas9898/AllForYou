@@ -53,39 +53,38 @@ function Header(props) {
         <Link to="/">
           <img className={HeaderStyle.logo} src={logo} alt={"notFound"} />
         </Link>
-         </div>
-        <div className={HeaderStyle.menu_section}>
-          <div className={HeaderStyle.menu_container}>
-            <div className={HeaderStyle.menu_content}>
-           <FontAwesomeIcon
-            onClick={handleMenu}
-            className={HeaderStyle.menu}
-            icon={faBars}
-          />
-            <div  onClick={handleMenu} className={HeaderStyle.category}>
+      </div>
+      <div className={HeaderStyle.menu_section}>
+        <div className={HeaderStyle.menu_container}>
+          <div className={HeaderStyle.menu_content}>
+            <FontAwesomeIcon
+              onClick={handleMenu}
+              className={HeaderStyle.menu}
+              icon={faBars}
+            />
+            <div onClick={handleMenu} className={HeaderStyle.category}>
               Категории
             </div>
 
-          <input
-            className={HeaderStyle.search_input}
-            onChange={handleInput}
-            value={search}
-            onKeyDown={handleKeyDown}
-          />
-          <FontAwesomeIcon
-            onClick={goToSearch}
-            className={HeaderStyle.search_icon}
-            icon={faSearch}
-          />
+            <input
+              className={HeaderStyle.search_input}
+              onChange={handleInput}
+              value={search}
+              onKeyDown={handleKeyDown}
+            />
+            <FontAwesomeIcon
+              onClick={goToSearch}
+              className={HeaderStyle.search_icon}
+              icon={faSearch}
+            />
           </div>
-           <MenuModal
-        categories={categories}
-        isMenuOpen={isMenuOpen}
-        handleMenu={handleMenu}
-      />
-         </div>     
+          <MenuModal
+            categories={categories}
+            isMenuOpen={isMenuOpen}
+            handleMenu={handleMenu}
+          />
         </div>
-       
+      </div>
     </nav>
   );
 }
