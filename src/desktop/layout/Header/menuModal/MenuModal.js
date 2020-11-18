@@ -8,7 +8,7 @@ function MenuModal({ isMenuOpen, categories, handleMenu }) {
       {isMenuOpen === true ? (
         <div className={MenuModalStyl.container}>
           <div className={MenuModalStyl.content}>
-            <h1>Категории</h1>
+            <div className={MenuModalStyl.category_title}>Категории</div>
             {categories.map((category) => {
               return (
                 <Link

@@ -4,11 +4,26 @@
   background: white;
   position:absolute;
   border-bottom: solid 2px #032d55;
+  animation: show .5s;
+
+}
+@keyframes show{
+  from {
+    width: 0%; 
+  }
+
+  to {
+    width: 100%;
+  }
 }
 .content {
   color: #032d55;
   margin-left: 5%;
   margin-bottom: 20px;
+}
+.category_title{
+  font-size: 40px;
+  font-weight: bolder;
 }
 .category {
   font-size: 20px;
@@ -18,4 +33,11 @@
   display: block;
   text-decoration: none;
   color: black;
+}
+@media only screen and (min-width: 900px) {
+  .category_title{
+    font-size: 40px;
+    font-weight: bolder;
+    display: none;
+  }
 }
