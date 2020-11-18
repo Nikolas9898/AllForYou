@@ -6,9 +6,9 @@ import ContentLoader from "react-content-loader";
 
 function ProductPreview({ product, previewImages }) {
   return (
-    <div className={ProductPreviewStyl.container}>
+    <div >
       {previewImages.length === 0 ? (
-        <div>
+        <div className={ProductPreviewStyl.container}>
           <ContentLoader
             speed={2}
             width="100%"
@@ -94,8 +94,8 @@ function ProductPreview({ product, previewImages }) {
           </div>
         </div>
       ) : (
-        <div>
-          <div>
+        <div className={ProductPreviewStyl.container}>
+          <div className={ProductPreviewStyl.image_gallery}>
             <ImageGallery items={previewImages} />
           </div>
 

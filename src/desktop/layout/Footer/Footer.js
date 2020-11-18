@@ -13,7 +13,7 @@ function Footer(props) {
           <h1>Свържете се с нас</h1>
           <div className={FooterStyl.connect_form}>
             <FontAwesomeIcon className={FooterStyl.connect} icon={faPhone} />
-            <a className={FooterStyl.connect} href="tel:0876825221">
+            <a className={FooterStyl.connect} href="tel:+359876825221">
               0883771333
             </a>
           </div>

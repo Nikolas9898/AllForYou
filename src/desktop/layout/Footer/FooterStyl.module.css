@@ -24,15 +24,26 @@
   text-decoration: none;
 }
 .logo {
-  width: 23%;
+  width: 100%;
   margin: auto;
   border-radius: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 400px) {
   .logo {
     width: 80%;
     margin: auto;
     border-radius: 20px;
   }
+
+  .content {
+    display: flex;
+    height: 100%;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+    justify-content: center;
+    align-items: baseline;
+    text-align: center;
+  }
+
 }

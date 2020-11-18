@@ -1,22 +1,21 @@
 .container {
   width: 100%;
-  max-width: 900px;
+  margin: auto;
   background: white;
   position:absolute;
   border-bottom: solid 2px #032d55;
-  animation: show .5s;
-
 }
 @keyframes show{
   from {
-    width: 0%; 
+    height: 0%; 
   }
 
   to {
-    width: 100%;
+    height: 100%;
   }
 }
 .content {
+  text-align: center;
   color: #032d55;
   margin-left: 5%;
   margin-bottom: 20px;
@@ -26,10 +25,11 @@
   font-weight: bolder;
 }
 .category {
-  font-size: 20px;
+  font-size: 23px;
+  font-family: neue-haas-unica, sans-serif;
   margin-bottom: 10px;
   padding-bottom: 5px;
-  border-bottom: solid 1px gray;
+  font-weight: bold;
   display: block;
   text-decoration: none;
   color: black;
@@ -40,4 +40,16 @@
     font-weight: bolder;
     display: none;
   }
+  .content {
+    margin-top: 20px;
+  }
+  .container {
+  width: 100%;
+  max-width: 350px;
+  margin: auto;
+  background: white;
+  position:absolute;
+  border-bottom: solid 2px #032d55;
+  animation: show .5s;
+}
 }
