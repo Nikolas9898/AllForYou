@@ -7,7 +7,7 @@ import Loader from "./components/loader/Loader";
 
 function ProductListContainer(props) {
   const [products, setProducts] = useState([]);
-  const [loader] = useState([]);
+  const [loader] = useState([{},{},{},{}]);
   useEffect(() => {
     window.scrollTo(0, 0);
     axios
@@ -19,6 +19,7 @@ function ProductListContainer(props) {
 
   return (
     <React.Fragment>
+     <div className={ProductListContainerStyle.section_title}>Най-нови продукти</div>
       {products.length === 0 ? (
         <div className={ProductListContainerStyle.container}>
           <div className={ProductListContainerStyle.content}>

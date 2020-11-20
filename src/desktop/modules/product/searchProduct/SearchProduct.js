@@ -4,18 +4,31 @@ import ProductCard from "../productList/components/productCard/ProductCard";
 import Loader from "../productList/components/loader/Loader";
 import axios from "axios";
 
-function SearchProduct({ title }) {
+function SearchProduct({ title },props) {
   const [products, setProducts] = useState([]);
   const [loader] = useState([{}, {}, {}, {}]);
+  const [noData, setNoData] = useState(false);
+  let[search,setSearch]=useState("");
+    if(search!==title){
+      setSearch(title);
+      setProducts([]);
+      setNoData(false);
 
+    }
+  
+  console.log(title===title)
   useEffect(() => {
     axios
       .get(
         `https://allforyouapinodejs.herokuapp.com/api/product/byTitle/${title}`
       )
       .then((products) => {
-        console.log(products);
+       
+        if(products.data.length===0){
+          setNoData(true);
+        }
         setProducts(products.data);
+        
       });
   }, [title]);
 
@@ -23,9 +36,17 @@ function SearchProduct({ title }) {
     <React.Fragment>
       {products.length === 0 ? (
         <div className={ProductListContainerStyle.container}>
-          <div className={ProductListContainerStyle.content}>
-            <p>Няма намерени продукти</p>
-          </div>
+          {
+            noData? <div className={ProductListContainerStyle.content}>
+
+             <p>Няма намерени продукти</p>
+            </div>:
+             <div className={ProductListContainerStyle.content}>
+              {loader.map((product, index) => {
+                return <Loader index={index} key={index} />;
+              })}
+             </div>
+          }
         </div>
       ) : (
         <div className={ProductListContainerStyle.container}>
